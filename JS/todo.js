@@ -14,14 +14,15 @@ function saveToDos() {
 //3번
 function deleteToDo(event) {
   const li = event.target.parentElement;
+  console.log(li.id);
   li.remove();
 }
-
+//2번
 function paintToDo(newTodo) {
-  //2번
   const li = document.createElement("li");
+  li.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo); //3번으로
@@ -35,8 +36,12 @@ function handleToDoSubmit(event) {
   event.preventDefault(); //form 제출시 새로고침 막기
   const newTodo = toDoInput.value;
   toDoInput.value = "";
-  toDos.push(newTodo);
-  paintToDo(newTodo); //2번으로
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj);
+  paintToDo(newTodoObj); //2번으로
   saveToDos(); //4번으로
 }
 
