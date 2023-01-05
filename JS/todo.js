@@ -2,10 +2,13 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.querySelector("#todo-list");
 
-const toDos = [];
+let toDos = [];
 
+const TODOS_KEY = "todos";
+
+//4번
 function saveToDos() {
-  localStorage.setItem("todos", JSON.stringify(toDos));
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 //3번
@@ -29,12 +32,20 @@ function paintToDo(newTodo) {
 
 //1번
 function handleToDoSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); //form 제출시 새로고침 막기
   const newTodo = toDoInput.value;
   toDoInput.value = "";
   toDos.push(newTodo);
   paintToDo(newTodo); //2번으로
-  saveToDos();
+  saveToDos(); //4번으로
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit); //1번으로
+
+const savedToDos = localStorage.getItem(TODOS_KEY); // savedToDos 에 loCalSotrage의 값을 저장한다.
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintToDo);
+}

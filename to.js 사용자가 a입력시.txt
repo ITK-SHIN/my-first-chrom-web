@@ -1,0 +1,21 @@
+사용자가 a입력후 form을 submit하면,
+
+newTodo 에 a 저장
+
+toDos = [a]
+
+2. paintToDo 작동 => a 그려짐
+
+3. saveToDos 작동 => localStorage에  Key: todos 
+                                                  value: ["a"]
+
+5. 작동
+savedToDOs에 key: todos 
+		value: ["a"]  저장
+
+<새로고침시>
+savedToDos 는 null이 아니므로
+parsedToDos에  savedToDos값 배열형태로저장
+toDos에 parsedtoDos 값 저장
+parsedtoDos 각요소마다 paintToDo 함수 실행
+a 다시 화면에 그려짐
