@@ -6,16 +6,17 @@ let toDos = [];
 
 const TODOS_KEY = "todos";
 
-//4번
+//3번
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-//3번
+//4번
 function deleteToDo(event) {
-  const li = event.target.parentElement;
-  console.log(li.id);
+  const li = event.target.parentElement; //click한 button의 부모 li
   li.remove();
+  toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+  saveToDos();
 }
 //2번
 function paintToDo(newTodo) {
@@ -49,6 +50,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit); //1번으로
 
 const savedToDos = localStorage.getItem(TODOS_KEY); // savedToDos 에 loCalSotrage의 값을 저장한다.
 
+//새로고침시 localStorage가 null이 아니면
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;

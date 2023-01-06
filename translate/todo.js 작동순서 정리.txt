@@ -10,7 +10,7 @@
 
 
 
-2. paintToDO 작동 (newTodo) 가 argument로 들어간다.
+2. paintToDO 작동 newTodo(사용자입력어) 가 argument로 들어간다.
 2-1. li 태그 만들고, span태그 만든다.
 2-2. span.innerText로 newTodo(사용자입력text) 를넣어준다. 
 2-3. button을만든다
@@ -21,14 +21,17 @@
 
 3. saveToDos 작동
 3-1. localStorag에 key : TODOS_KEY 값,  
-                       value: JSON.stringify(toDos)  로 저장한다.
+                       value: JSON.stringify(toDos)  로 저장한다. => "["a","b"]"형태로저장
 
 4. deleteToDO 작동
 4-1. target인 button의 부모요소인 li를 제거한다.
 
 
 5. savedToDos 에 localSotrage의 값을 저장한다.
-5-1. 만약 savedToDos 가 null이 아니면
+<새로고침시>
+5-1. 만약 savedToDos 가 null이 아니면 (localStorage가 빈값이아니면)
 5-2. parsedToDos 에 savedToDos 값을 배열형태로 저장한다.
 5-3. toDos에 parsedToDos 값을 저장한다.
 5-4. parsedToDos의 각 요소마다 paintTodo함수를실행한다.
+
+5-1. 만약 savedToDos 가 null이면 이 과정 생략.
