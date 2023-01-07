@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
+    <header>
+      <div class="clock-position">
+        <h2 id="clock">00:00:00</h2>
+      </div>
+
+      <div id="weather">
+        <span>위치 및 시간</span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
     <div>
       <form id="login-form" class="hidden">
         <input type="text" required maxlength="15" placeholder="아이디" />
         <input type="submit" value="로그인" />
       </form>
-    </div>
-
-    <div class="clock-position">
-      <h2 id="clock">00:00:00</h2>
     </div>
 
     <div>

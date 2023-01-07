@@ -1,8 +1,14 @@
 @import "reset.css";
+@import "header.css";
 
 .hidden {
   display: none;
 }
+body {
+  height: 100vh;
+  color: white;
+}
+
 img {
   opacity: 1;
   top: 0px;
@@ -11,19 +17,7 @@ img {
   height: 100vh;
   z-index: -1;
 }
-#clock {
-  font-size: 100px;
-  font-weight: 600;
-}
-.clock-position {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-}
-body {
-  height: 100vh;
-  color: white;
-}
+
 #todo-form {
   display: flex;
   justify-content: center;
