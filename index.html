@@ -20,35 +20,43 @@
       </div>
     </header>
 
-    <div>
-      <form id="login-form" class="hidden">
-        <input type="text" required maxlength="15" placeholder="아이디" />
-        <input type="submit" value="로그인" />
-      </form>
-    </div>
+    <section id="top-section">
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+    </section>
 
-    <div>
-      <h1 id="greeting" class="hidden"></h1>
-    </div>
+    <section id="main">
+      <div id="LOGIN">
+        <div>
+          <form id="login-form" class="hidden">
+            <input type="text" required maxlength="15" placeholder="아이디" />
+            <input type="submit" value="로그인" />
+          </form>
+        </div>
+        <div>
+          <h1 id="greeting" class="hidden"></h1>
+        </div>
+      </div>
 
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
+      <div id="TODO">
+        <form id="todo-form">
+          <span>오늘 할 일</span>
+          <input
+            type="text"
+            placeholder="오늘 할 일이 무엇인가요?"
+            required
+            maxlength="20"
+          />
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
 
-    <form id="todo-form">
-      <input
-        type="text"
-        placeholder="오늘 할 일을 쓰고 엔터 누르세요"
-        required
-      />
-    </form>
-    <ul id="todo-list"></ul>
-
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
+      <div id="memo">
+        <div>메모</div>
+      </div>
+    </section>
 
     <script src="JS/backgrounds.js"></script>
     <script src="JS/greetings.js"></script>

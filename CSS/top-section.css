@@ -1,0 +1,23 @@
+#top-section {
+  height: 5vh;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  font-weight: 700;
+}
+#quote {
+  display: flex;
+  flex-direction: column;
+}
+#quote span {
+  margin-bottom: 10px;
+  width: 40%;
+  margin: auto;
+  line-height: 40px;
+}
+#quote span:nth-child(2) {
+  position: relative;
+  text-align: end;
+  font-size: 20px;
+}

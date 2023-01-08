@@ -1,6 +1,8 @@
 @import "reset.css";
 @import "header.css";
-
+@import "top-section.css";
+@import "left-section.css";
+@import "main-section.css";
 .hidden {
   display: none;
 }
@@ -21,10 +23,4 @@ img {
 #todo-form {
   display: flex;
   justify-content: center;
-}
-ul {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
